@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity } from 'react-native';
+import { StyleSheet, KeyboardAvoidingView, Platform, Text, View, Image, TextInput, TouchableOpacity, TouchableHighlight, Alert } from 'react-native';
 import { Ionicons } from 'react-native-vector-icons'
 
 export default function App() {
 
   const [text, setText] = useState("");
+  const handleMapNavigation = () => {
+    Alert.alert('Botão apertado.'); //INSERIR AQUI LÓGICA PARA JOGAR PARA O MAPA
+  };
 
   return (
     <View style={styles.maincontainer}>
@@ -41,15 +44,19 @@ export default function App() {
       </View>
 
       <View>
-        <TouchableOpacity style={styles.button}>
+        <TouchableHighlight
+          style={styles.button}
+          onPress={handleMapNavigation}
+          underlayColor={"#416AB5"}
+          activeOpacity={0.6}
+        >
           <Text style={styles.buttonText}>
             Navegar pelo mapa
           </Text>
-        </TouchableOpacity>
+        </TouchableHighlight>
       </View>
 
     </View>
-
   );
 }
 
@@ -65,7 +72,7 @@ const styles = StyleSheet.create({
     height: 180,
     width: 180,
     resizeMode: 'contain',
-    marginBottom: "20%",
+    marginBottom: "10%",
     marginTop: '10%'
   },
 
