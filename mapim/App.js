@@ -10,10 +10,12 @@ export default function App() {
   return (
     <View style={styles.maincontainer}>
 
+
+      <Image source={require("./assets/rural_logosplash.png")}
+        style={styles.backgroundimage}
+      />
+
       <View style={{ alignItems: 'center' }}>
-        <Image source={require("./assets/rural_logo03.png")}
-          style={styles.backgroundimage}
-        />
 
         <StatusBar style="auto" />
         <Image
@@ -28,15 +30,17 @@ export default function App() {
             onChangeText={(value) => setText(value)}
           />
 
-          <Ionicons
-            name='search'
-            size={30}
-            color="#284b8c"
-          />
+          <TouchableOpacity>
+            <Ionicons
+              name='search'
+              size={30}
+              color="#284b8c"
+            />
+          </TouchableOpacity>
         </View>
       </View>
 
-      <View style={[styles.boxshadow, { borderRadius: 30 }]}>
+      <View>
         <TouchableOpacity style={styles.button}>
           <Text style={styles.buttonText}>
             Navegar pelo mapa
@@ -45,7 +49,6 @@ export default function App() {
       </View>
 
     </View>
-
 
   );
 }
@@ -67,11 +70,11 @@ const styles = StyleSheet.create({
   },
 
   backgroundimage: {
-    height: '125%',
-    width: '125%',
+    height: '80%',
+    width: '80%',
     position: 'absolute',
     top: 20,
-    opacity: 0.03
+    opacity: 0.025
   },
 
   searchcontainer: {
