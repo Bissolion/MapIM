@@ -3,23 +3,48 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity, TouchableHighlight, Alert } from 'react-native';
 import { Ionicons } from 'react-native-vector-icons'
 
-export default function App() {
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { NavigationContainer } from '@react-navigation/native';
 
-  const [text, setText] = useState("");
-  const buttonPressed = () => {
-    Alert.alert("Botão pressionado")
-  };
+const Tab = createBottomTabNavigator();
+
+function MyTabs() {
+  return (
+    <Tab.Navigator screenOptions={{ headerShown: false }}>
+      <Tab.Screen name="Tela inicial" component={HomeScreen}
+      />
+      <Tab.Screen name="Mapa" component={MapScreen} />
+    </Tab.Navigator>
+  );
+}
+
+export default function App() {
+  return (
+    <NavigationContainer>
+      <MyTabs />
+    </NavigationContainer>
+  )
+}
+
+function MapScreen() {
+  return (
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <Text>Mapa aqui</Text>
+    </View>
+  );
+}
+
+function HomeScreen() {
 
   return (
-    <View style={styles.maincontainer}>
-
-      <Image source={require("./assets/rural_logosplash.png")}  //Miguel Esteves Acá
+    <View style={styles.page}>
+      <StatusBar style="auto" />
+      <Image source={require("./assets/rural_logosplash.png")}
         style={styles.backgroundimage}
       />
 
-      <View style={{ alignItems: 'center' }}>
+      <View style={styles.maincontainer}>
 
-        <StatusBar style="auto" />
         <Image
           source={require("./assets/rural_logo03.png")}
           style={styles.mainlogo} />
@@ -28,21 +53,16 @@ export default function App() {
           <TextInput
             style={{ justifyContent: 'flex-end', flex: 9 }}
             placeholder='Sala, professor, bloco...'
-            value={text}
-            onChangeText={(value) => setText(value)}
           />
-
-          <TouchableOpacity>
-            <Ionicons
-              name='search'
-              size={25}
-              color="#284b8c"
-            />
-          </TouchableOpacity>
+          <Ionicons
+            name='search'
+            size={25}
+            color="#284b8c"
+          />
         </View>
       </View>
 
-      <View>
+      {/* <View>
         <TouchableHighlight
           style={styles.button}
           onPress={buttonPressed}
@@ -53,18 +73,24 @@ export default function App() {
             Navegar pelo mapa
           </Text>
         </TouchableHighlight>
-      </View>
+      </View> */}
 
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  maincontainer: {
+  page: {
     height: "100%",
     backgroundColor: '#F5F5F5',
     alignItems: 'center',
     justifyContent: 'space-around',
+  },
+
+  maincontainer: {
+    height: '70 %',
+    justifyContent: 'space-around',
+    alignItems: 'center',
   },
 
   mainlogo: {
