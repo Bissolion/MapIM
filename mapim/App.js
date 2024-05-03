@@ -11,7 +11,7 @@ export default function App() {
     <View style={styles.maincontainer}>
 
 
-      <Image source={require("./assets/rural_logosplash.png")}
+      <Image source={require("./assets/rural_logosplash.png")}  //Miguel Esteves Acá
         style={styles.backgroundimage}
       />
 
