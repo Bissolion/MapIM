@@ -1,18 +1,17 @@
 import React, { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, KeyboardAvoidingView, Platform, Text, View, Image, TextInput, TouchableOpacity, TouchableHighlight, Alert } from 'react-native';
+import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity, TouchableHighlight, Alert } from 'react-native';
 import { Ionicons } from 'react-native-vector-icons'
 
 export default function App() {
 
   const [text, setText] = useState("");
-  const handleMapNavigation = () => {
-    Alert.alert('Botão apertado.'); //INSERIR AQUI LÓGICA PARA JOGAR PARA O MAPA
+  const buttonPressed = () => {
+    Alert.alert("Botão pressionado")
   };
 
   return (
     <View style={styles.maincontainer}>
-
 
       <Image source={require("./assets/rural_logosplash.png")}  //Miguel Esteves Acá
         style={styles.backgroundimage}
@@ -36,7 +35,7 @@ export default function App() {
           <TouchableOpacity>
             <Ionicons
               name='search'
-              size={30}
+              size={25}
               color="#284b8c"
             />
           </TouchableOpacity>
@@ -46,7 +45,7 @@ export default function App() {
       <View>
         <TouchableHighlight
           style={styles.button}
-          onPress={handleMapNavigation}
+          onPress={buttonPressed}
           underlayColor={"#416AB5"}
           activeOpacity={0.6}
         >
@@ -88,6 +87,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     width: '75%',
     backgroundColor: 'white',
+    alignItems: 'center',
     justifyContent: 'space-between',
     paddingRight: 16,
     paddingLeft: 12,
@@ -105,7 +105,7 @@ const styles = StyleSheet.create({
     padding: 15,
     borderRadius: 30,
     borderColor: 'black',
-    borderWidth: 2,
+    borderWidth: 1,
   },
 
   buttonText: {
