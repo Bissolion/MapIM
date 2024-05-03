@@ -7,7 +7,7 @@
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/rural_logo03.png",
+      "image": "./assets/rural_logosplash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
