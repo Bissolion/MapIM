@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity, TouchableHighlight, Alert } from 'react-native';
+import { StyleSheet, Text, View, Image, TextInput, ImageBackground, Alert } from 'react-native';
 import { Ionicons } from 'react-native-vector-icons'
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -10,10 +10,38 @@ const Tab = createBottomTabNavigator();
 
 function MyTabs() {
   return (
-    <Tab.Navigator screenOptions={{ headerShown: false }}>
+    <Tab.Navigator
+      screenOptions={{ headerShown: false }}>
+
       <Tab.Screen name="Tela inicial" component={HomeScreen}
+        options={{
+          title: 'Tela inicial',
+          tabBarIcon: () => {
+            return (
+              <Ionicons
+                name='home'
+                size={18}
+                color='#284b8c'
+              />
+            )
+          }
+        }}
       />
-      <Tab.Screen name="Mapa" component={MapScreen} />
+
+      <Tab.Screen name="Mapa" component={MapScreen}
+        options={{
+          title: 'Mapa',
+          tabBarIcon: () => {
+            return (
+              <Ionicons
+                name='map'
+                size={18}
+                color='#284b8c'
+              />
+            )
+          }
+        }}
+      />
     </Tab.Navigator>
   );
 }
@@ -61,20 +89,6 @@ function HomeScreen() {
           />
         </View>
       </View>
-
-      {/* <View>
-        <TouchableHighlight
-          style={styles.button}
-          onPress={buttonPressed}
-          underlayColor={"#416AB5"}
-          activeOpacity={0.6}
-        >
-          <Text style={styles.buttonText}>
-            Navegar pelo mapa
-          </Text>
-        </TouchableHighlight>
-      </View> */}
-
     </View>
   );
 }
@@ -101,8 +115,8 @@ const styles = StyleSheet.create({
   },
 
   backgroundimage: {
-    height: '80%',
-    width: '80%',
+    height: '83%',
+    width: '100%',
     position: 'absolute',
     top: 20,
     opacity: 0.025
