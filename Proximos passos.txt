@@ -1,0 +1,7 @@
+1. criar banco de dados com tabelas de salas, horários e professores
+2. CRUD
+
+Segunda-feira | Perguntar pro Marcel
+
+Pedir relação de salas 
+perguntar sobre como fazer o mapa
