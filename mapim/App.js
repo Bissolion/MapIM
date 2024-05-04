@@ -42,6 +42,21 @@ function MyTabs() {
           }
         }}
       />
+
+      <Tab.Screen name="Anúncios" component={AnnouncementScreen}
+        options={{
+          title: 'Anúncios',
+          tabBarIcon: () => {
+            return (
+              <Ionicons
+                name='megaphone'
+                size={18}
+                color='#284b8c'
+              />
+            )
+          }
+        }}
+      />
     </Tab.Navigator>
   );
 }
@@ -60,6 +75,14 @@ function MapScreen() {
       <Text>Mapa aqui</Text>
     </View>
   );
+}
+
+function AnnouncementScreen() {
+  return (
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <Text>Anúncios aqui</Text>
+    </View>
+  )
 }
 
 function HomeScreen() {
