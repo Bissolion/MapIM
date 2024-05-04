@@ -97,7 +97,6 @@ const styles = StyleSheet.create({
     height: 180,
     width: 180,
     resizeMode: 'contain',
-    marginBottom: "10%",
     marginTop: '10%'
   },
 
@@ -119,24 +118,6 @@ const styles = StyleSheet.create({
     paddingLeft: 12,
     padding: 4,
     borderRadius: 8,
-  },
-
-  button: {
-    backgroundColor: '#284b8c',
-    alignItems: 'center',
-    justifyContent: 'center',
-    width: 200,
-    paddingLeft: 15,
-    paddingRight: 15,
-    padding: 15,
-    borderRadius: 30,
-    borderColor: 'black',
-    borderWidth: 1,
-  },
-
-  buttonText: {
-    color: 'white',
-    fontSize: 18
   },
 
   boxshadow: {
